@@ -454,6 +454,7 @@ height: 20vw;
   text-decoration: none;
   font-family: sans-serif;
   position: relative;
+  color: #4B0983;
 }
 .mainnav a::after{
   content: "";
