@@ -8,6 +8,15 @@
 
 
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+
+
 html.lenis, html.lenis body {
   height: auto;
 }
@@ -241,17 +250,17 @@ height: 20vw;
       height:150px;
       width: 150px;
       left: 0;
+      background: -o-radial-gradient(100px 100px, circle, #B39E9B, #000000c4);
       background: radial-gradient(circle at 100px 100px, #B39E9B, #000000c4);
     }
     .stage2 .ball .shadow {
     position: absolute;
     width: 100%;
     height: 100%;
+    background: -o-radial-gradient(50% 50%, circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
     background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
     -webkit-transform: rotateX(90deg) translateZ(-150px);
-    -moz-transform: rotateX(90deg) translateZ(-150px);
     -ms-transform: rotateX(90deg) translateZ(-150px);
-    -o-transform: rotateX(90deg) translateZ(-150px);
     transform: rotateX(90deg) translateZ(-150px);
     z-index: -1;
     }
@@ -262,12 +271,10 @@ height: 20vw;
       top: 42%;    
       height: 200px;
       -webkit-perspective: 1200px;
-      -moz-perspective: 1200px;
       -ms-perspective: 1200px;
       -o-perspective: 1200px;
       perspective: 1200px;
       -webkit-perspective-origin: 50% 50%;
-      -moz-perspective-origin: 50% 50%;
       -ms-perspective-origin: 50% 50%;
       -o-perspective-origin: 50% 50%;
       perspective-origin: 50% 50%;
@@ -283,17 +290,17 @@ height: 20vw;
       width: 250px;
       position: relative;
       left: -40vw !important;
+      background: -o-radial-gradient(100px 100px,circle,#866663d4, #000000c4);
       background: radial-gradient(circle at 100px 100px,#866663d4, #000000c4);
     }
     .page1left .stage3 .ball .shadow {
     position: absolute;
     width: 100%;
     height: 100%;
+    background: -o-radial-gradient(50% 50%, circle, rgba(72, 22, 22, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
     background: radial-gradient(circle at 50% 50%, rgba(72, 22, 22, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
     -webkit-transform: rotateX(90deg) translateZ(-150px);
-    -moz-transform: rotateX(90deg) translateZ(-150px);
     -ms-transform: rotateX(90deg) translateZ(-150px);
-    -o-transform: rotateX(90deg) translateZ(-150px);
     transform: rotateX(90deg) translateZ(-150px);
     z-index: -1;
     }
@@ -304,12 +311,10 @@ height: 20vw;
       top: 70%;    
       height: 200px;
       -webkit-perspective: 1200px;
-      -moz-perspective: 1200px;
       -ms-perspective: 1200px;
       -o-perspective: 1200px;
       perspective: 1200px;
       -webkit-perspective-origin: 50% 50%;
-      -moz-perspective-origin: 50% 50%;
       -ms-perspective-origin: 50% 50%;
       -o-perspective-origin: 50% 50%;
       perspective-origin: 50% 50%;
@@ -431,9 +436,15 @@ height: 20vw;
   height: 3vw;
   width: 30vw;
   /* border: 2px solid #4B0983; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 2vw;
   position: relative;
   top: 3vw;
@@ -453,6 +464,8 @@ height: 20vw;
   width:0%;
   position: absolute;
   background-color: #4B0983;
+  -webkit-transition: all ease 1s;
+  -o-transition: all ease 1s;
   transition: all ease 1s;
 }
 a:hover::after{
@@ -2285,9 +2298,15 @@ overflow: hidden;
     .loader{
       height: 100vh;
       width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
       display: none;
     }
 
@@ -2476,17 +2495,17 @@ overflow: hidden;
   width: 200px;
   position: relative;
   left: -40vw !important;
+  background: -o-radial-gradient(100px 100px,circle,#866663d4, #000000c4);
   background: radial-gradient(circle at 100px 100px,#866663d4, #000000c4);
 }
 .page1left .stage3 .ball .shadow {
 position: absolute;
 width: 100%;
 height: 100%;
+background: -o-radial-gradient(50% 50%, circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
 background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
 -webkit-transform: rotateX(90deg) translateZ(-150px);
--moz-transform: rotateX(90deg) translateZ(-150px);
 -ms-transform: rotateX(90deg) translateZ(-150px);
--o-transform: rotateX(90deg) translateZ(-150px);
 transform: rotateX(90deg) translateZ(-150px);
 z-index: -1;
 }
@@ -2497,12 +2516,10 @@ z-index: -1;
   top: 70%;    
   height: 200px;
   -webkit-perspective: 1200px;
-  -moz-perspective: 1200px;
   -ms-perspective: 1200px;
   -o-perspective: 1200px;
   perspective: 1200px;
   -webkit-perspective-origin: 50% 50%;
-  -moz-perspective-origin: 50% 50%;
   -ms-perspective-origin: 50% 50%;
   -o-perspective-origin: 50% 50%;
   perspective-origin: 50% 50%;
@@ -2518,17 +2535,17 @@ z-index: -1;
   height:120px;
   width: 120px;
   left: 0;
+  background: -o-radial-gradient(100px 100px, circle, #B39E9B, #000000c4);
   background: radial-gradient(circle at 100px 100px, #B39E9B, #000000c4);
 }
 .stage2 .ball .shadow {
 position: absolute;
 width: 100%;
 height: 100%;
+background: -o-radial-gradient(50% 50%, circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
 background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
 -webkit-transform: rotateX(90deg) translateZ(-150px);
--moz-transform: rotateX(90deg) translateZ(-150px);
 -ms-transform: rotateX(90deg) translateZ(-150px);
--o-transform: rotateX(90deg) translateZ(-150px);
 transform: rotateX(90deg) translateZ(-150px);
 z-index: -1;
 }
@@ -2539,12 +2556,10 @@ z-index: -1;
   top: 42%;    
   height: 200px;
   -webkit-perspective: 1200px;
-  -moz-perspective: 1200px;
   -ms-perspective: 1200px;
   -o-perspective: 1200px;
   perspective: 1200px;
   -webkit-perspective-origin: 50% 50%;
-  -moz-perspective-origin: 50% 50%;
   -ms-perspective-origin: 50% 50%;
   -o-perspective-origin: 50% 50%;
   perspective-origin: 50% 50%;
@@ -2620,9 +2635,15 @@ z-index: -1;
 .page4{
   height: 60vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .page4 .h4textcontainer{
@@ -2661,11 +2682,20 @@ z-index: -1;
 .page5{
   height: 90vh;
   width: 100%;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 5vw;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .page5 .h1text::after{
   Content:"Cadbury";
@@ -2687,25 +2717,46 @@ color: #4B0983;
 .page6{
   height: 80vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .page6_right{
   height: 100%;
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items:flex-start;
-  justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align:start;
+      -ms-flex-align:start;
+          align-items:flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .page6_right #elem{
   height: 30vw;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   white-space: nowrap;
   gap: 2vw;
 }
@@ -2721,9 +2772,15 @@ color: #4B0983;
 .page6  .page6_left{
   height: 100%;
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .page6_left #img{
   height: 50vw !important;
@@ -2735,7 +2792,9 @@ color: #4B0983;
 
 .img1 img{
   border: 2px solid #fff;
-  transform: rotate("2deg");
+  -webkit-transform: rotate("2deg");
+      -ms-transform: rotate("2deg");
+          transform: rotate("2deg");
   
 }
 .page7{
@@ -2767,8 +2826,13 @@ color: #4B0983;
 }
 
 .footer .footerbtmbtm{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 6vw;
 }
 .footer .footerbtmbtmleft h6{
