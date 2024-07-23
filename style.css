@@ -77,7 +77,7 @@ html.lenis, html.lenis body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    /* display: none; */
+    display: none;
   }
 
   .loader .loaderimgcontainer {
@@ -244,14 +244,14 @@ height: 20vw;
 .page1left  .stage2 .ball {
       display: block;
       top: 60%;
-      background: black;
+      background: rgb(61, 15, 15);
       margin: 0;
       border-radius: 50%;
       height:150px;
       width: 150px;
       left: 0;
-      background: -o-radial-gradient(100px 100px, circle, #B39E9B, #000000c4);
-      background: radial-gradient(circle at 100px 100px, #B39E9B, #000000c4);
+      background: -o-radial-gradient(100px 100px, circle, #ee5a43, #300c0cc4);
+      background: radial-gradient(circle at 100px 100px, #df7f71, #460101c4);
     }
     .stage2 .ball .shadow {
     position: absolute;
@@ -283,15 +283,15 @@ height: 20vw;
     .page1left .stage3 .ball {
       display: block;
       top:-1vw ;
-      background: black;
+      background: rgb(109, 43, 43);
       margin: 0;
       border-radius: 50%;
       height:250px;
       width: 250px;
       position: relative;
       left: -40vw !important;
-      background: -o-radial-gradient(100px 100px,circle,#866663d4, #000000c4);
-      background: radial-gradient(circle at 100px 100px,#866663d4, #000000c4);
+      background: -o-radial-gradient(100px 100px, circle, #f45138, #300c0cc4);
+      background: radial-gradient(circle at 100px 100px, #d57a6c, #460101c4);
     }
     .page1left .stage3 .ball .shadow {
     position: absolute;
@@ -418,14 +418,15 @@ height: 20vw;
 
 .page1>h1{
     text-transform: capitalize;
-    margin-left: 10vw;
-    font-size: 6vw;
+    margin-left: 5vw;
+    font-size: 7vw;
     margin-right: 70vw;
     font-family:"Pacifico", cursive;
     white-space: nowrap;
     text-transform:lowercase;
     font-weight: 100;
     color: #4B0983;
+    
 
 }
 .page1 h1 span{
@@ -448,13 +449,15 @@ height: 20vw;
   gap: 2vw;
   position: relative;
   top: 3vw;
-  left: 9vw;
+  left: 5vw;
 }
 .mainnav a{
   text-decoration: none;
-  font-family: sans-serif;
   position: relative;
   color: #4B0983;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
 }
 .mainnav a::after{
   content: "";
@@ -487,19 +490,8 @@ a:hover::after{
   width: 40%;
   position: relative;
   left: 60vw;
-  top: -34vw;
+  top: -35.5vw;
   
-}
-
-
-.page1left video{
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .page1 .page1left img{
     height: 55vh;
@@ -515,13 +507,22 @@ a:hover::after{
     top: -5vw;
   
 }
+.page1left #img1{
+  height: 20vw;
+  width: 15vw;
+  position: absolute;
+margin-left: 45vw;
+margin-top: 35vw;
+}
 .page1>p{
     position: relative;
-    margin-left: 10vw;
+    margin-left: 5vw;
     margin-right: 10vw;
     margin-top: 10vh;
     font-size:1.5vw;
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
 }
 
 .wrapper2 {
@@ -529,7 +530,7 @@ a:hover::after{
   -webkit-filter: url('#goo');
           filter: url('#goo');
   position: relative;
-  left: 10vw;
+  left: 5vw;
   top: -45vw;
   z-index: 99999;
 }
@@ -548,6 +549,9 @@ a:hover::after{
   text-decoration: none;
   font-family: var(--font);
   font-size: 1.25rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
 }
 
 .button2:before,
@@ -605,6 +609,8 @@ a:hover::after{
      gap:1vw ;
      position: relative;
      /* padding: 15vw; */
+     background: -o-radial-gradient(circle, #E6E6FA, #D8BFD8);
+     background: radial-gradient(circle, #E6E6FA, #D8BFD8)
      
   
   }
@@ -1511,6 +1517,31 @@ position:absolute;
   
 
 }
+.para7left p{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+
+}
+.para7right p{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+
+}
+
+.page7coach p{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+
+}
+.page8 p{
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+
+}
 
 .page7teacher .page7teacherleft{
   height: 100%;
@@ -1543,10 +1574,19 @@ position:absolute;
 .page7teacherleft .img7left{
   height: 20vw;
   width: 28vw;
-  /* transform: rotate(-5deg); */
-
   border-radius: 10px;
 overflow: hidden;
+}
+.img7left .img{
+  height: 140%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.img7left .imgleft{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .text7container{
   height: 15vw;
@@ -1637,7 +1677,7 @@ overflow: hidden;
 
 .page7teacherright .img7right{
   height: 20vw;
-  width: 25vw;
+  width: 30vw;
   border-radius: 10px;
   background-color: #fff;
   /* transform: rotate(5deg); */
@@ -1645,14 +1685,6 @@ overflow: hidden;
   position: relative;
   left: -3vw;
 }
-
-
-
-
-
-
-
-
 
 
 .page7 .page7coach{
@@ -1700,14 +1732,21 @@ overflow: hidden;
 }
 .page7coachleft .img7left{
   height: 20vw;
-  width: 20vw;
+  width: 30vw;
   /* transform: rotate(-5deg); */
   background-color: #fff;
   border-radius: 10px;
   position: relative;
 overflow: hidden;
 top: -4vw;
+left: 3.5vw;
 
+}
+
+.img7left video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .text7container{
   height: 15vw;
@@ -1787,7 +1826,7 @@ top: -4vw;
 
 .page7coachright .img7right{
   height: 20vw;
-  width: 25vw;
+  width: 30vw;
   background-color: #fff;
   border-radius: 10px;
   /* transform: rotate(5deg); */
@@ -1796,6 +1835,11 @@ position: relative;
 left: -5vw;
 }
 
+.img7right video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 .page7 img{
   height:180%;
@@ -1804,12 +1848,6 @@ left: -5vw;
      object-fit: cover;
 }
 
-.page7 video{
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 .page8{
   height: 130vh;
   width: 100vw;
@@ -1877,14 +1915,13 @@ left: -5vw;
 }
 .page8teacherleft .img8left{
   height: 20vw;
-  width: 25vw;
-  /* transform: rotate(-5deg); */
-
+  width: 30vw;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
   left: 8vw;
 }
+
 
 .text8container{
   height: 15vw;
@@ -1962,13 +1999,18 @@ left: -5vw;
 
 .page8teacherright .img8right{
   height: 20vw;
-  width: 25vw;
+  width: 30vw;
   border-radius: 10px;
   background-color: #fff;
   /* transform: rotate(5deg); */
  
 }
 
+.img8right video{
+  height: 100%;
+  width:100%;
+  object-fit: cover;
+}
 
 
 
@@ -2026,7 +2068,7 @@ left: -5vw;
 }
 .page8coachleft .img8left{
   height: 20vw;
-  width: 20vw;
+  width: 30vw;
   /* transform: rotate(-5deg); */
   background-color: #fff;
   border-radius: 10px;
@@ -2118,13 +2160,18 @@ left: -5vw;
 
 .page8coachright .img8right{
   height: 20vw;
-  width: 25vw;
+  width: 30vw;
   background-color: #fff;
   border-radius: 10px;
   /* transform: rotate(5deg); */
 overflow: hidden;
 }
 
+.img8right video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 .page8 img{
   height: 180%;
@@ -2372,10 +2419,13 @@ overflow: hidden;
   position: relative;
   min-width: 8.23em;
   text-decoration: none;
-  font-family: var(--font);
+  /* font-family: var(--font); */
   font-size: 3vw;
   left: -23vw;
   top: -5vw;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: italic;
 }
 
 .button:before,
@@ -2496,8 +2546,8 @@ overflow: hidden;
   width: 200px;
   position: relative;
   left: -40vw !important;
-  background: -o-radial-gradient(100px 100px,circle,#866663d4, #000000c4);
-  background: radial-gradient(circle at 100px 100px,#866663d4, #000000c4);
+  background: -o-radial-gradient(100px 100px, circle, #f45138, #300c0cc4);
+  background: radial-gradient(circle at 100px 100px, #d57a6c, #460101c4);
 }
 .page1left .stage3 .ball .shadow {
 position: absolute;
@@ -2529,15 +2579,15 @@ z-index: -1;
   
 .page1left  .stage2 .ball {
   display: block;
-  top: 80%;
+  top: 85%;
   background: black;
   margin: 0;
   border-radius: 50%;
   height:120px;
   width: 120px;
   left: 0;
-  background: -o-radial-gradient(100px 100px, circle, #B39E9B, #000000c4);
-  background: radial-gradient(circle at 100px 100px, #B39E9B, #000000c4);
+  background: -o-radial-gradient(100px 100px, circle, #ee5a43, #300c0cc4);
+  background: radial-gradient(circle at 100px 100px, #df7f71, #460101c4);
 }
 .stage2 .ball .shadow {
 position: absolute;

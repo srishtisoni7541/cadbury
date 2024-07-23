@@ -805,7 +805,7 @@ function page1Animation(){
 
 
   document.querySelector(".page1").addEventListener("mousemove",function(dets){
-    var crcle = document.querySelector(".page1left>img");
+    var crcle = document.querySelector(".page1left>.img");
     crcle.style.transform = `translate(${dets.clientX*0.06}px,${dets.clientY*0.06}px)`;
  
   })
@@ -944,8 +944,8 @@ function page7Animation(){
   })
 
 
-  gsap.to('.page7 img',{
-    y:-170,
+  gsap.to('.page7 .img',{
+    y:-150,
     duration:.5,
     scrollTrigger:{
       trigger:'.page7',
