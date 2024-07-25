@@ -727,7 +727,9 @@ page8Animation();
 
 
 
+
 function themeEffect() {
+  var logo = document.querySelector('#page1 #logo');
   var h1 = document.querySelectorAll('.main #page1 h1, .main .page2 h1, .main .page3 h1, .main .page4 h1, .main .page5 h1, .page6right_elem h3');
   var page1_h1 = document.querySelector('#page1 h1');
   var h2 = document.querySelector('#page1 h2');
@@ -741,6 +743,9 @@ function themeEffect() {
   var page5_h11 = document.querySelector('.h1text');
   var page6_h1 = document.querySelectorAll('.page6right_elem h1');
 
+  console.log("page1_h1: ", page1_h1);
+  console.log("p_tag: ", p_tag);
+
   if (btn) {
     btn.addEventListener('click', function() {
       // Toggle theme-effect class on main and all pages
@@ -751,13 +756,17 @@ function themeEffect() {
 
       if (h2) h2.classList.toggle('theme-effect');
 
-      // Toggle text color for h1 and p
+      // Toggle text color for h1 elements except page1_h1
       h1.forEach(header => {
-        header.classList.toggle('theme-effect');
+        if (header !== page1_h1) {
+          header.classList.toggle('theme-effect');
+        }
       });
 
       p.forEach(paragraph => {
-        paragraph.classList.toggle('theme-effect');
+        if (paragraph !== p_tag) {
+          paragraph.classList.toggle('theme-effect');
+        }
       });
 
       page5_h1_spans.forEach(span => {
@@ -774,8 +783,26 @@ function themeEffect() {
         header.classList.toggle('gradient-text');
       });
 
-     page1_h1.style.color='var(--white)';
-       p_tag.style.color='var(--white)';
+      console.log("Before toggling gradient-text on page1_h1");
+      if (page1_h1) {
+        page1_h1.classList.toggle('gradient-text');
+        console.log("Toggled gradient-text on page1_h1");
+      }
+
+      console.log("Before toggling gradient-text on p_tag");
+      if (p_tag) {
+        p_tag.classList.toggle('gradient-text');
+        console.log("Toggled gradient-text on p_tag");
+      }
+
+      if (logo) {
+        // Toggle the logo image source
+        if (logo.src.includes('logo3.png')) {
+          logo.src = './images/footerlogo.png';
+        } else {
+          logo.src = './images/logo3.png';
+        }
+      }
     });
   }
 }

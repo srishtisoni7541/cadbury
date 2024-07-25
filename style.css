@@ -137,11 +137,9 @@ left: 65vw;
       font-size: 70px;
       font-weight: 300;
       font-family:'a';
-      background: var(--purple);
-      /* color:#f7f2f5;  */
+      color: var(--purple);
       letter-spacing:.5vw;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+ 
   }
   
   #page1 .header {
