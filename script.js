@@ -621,7 +621,7 @@ function page6Animation() {
           
           // Animate the position
           gsap.to(images[index], {
-              x: "-40vw",
+              x: "-45vw",
               rotate:"5",
               duration:1,
               ease: "power2.inOut"
@@ -727,37 +727,57 @@ page8Animation();
 
 
 
-
 function themeEffect() {
-  var h1 = document.querySelectorAll('.main h1');
-  var p = document.querySelectorAll('.main p');
-  var a = document.querySelectorAll('.main a'); // This is unused but kept in case needed
+  var h1 = document.querySelectorAll('.main #page1 h1, .main .page2 h1, .main .page3 h1, .main .page4 h1, .main .page5 h1, .page6right_elem h3');
+  var page1_h1 = document.querySelector('#page1 h1');
+  var h2 = document.querySelector('#page1 h2');
+  var p = document.querySelectorAll('.main #page1 p, .main .page2 p, .main .page3 p, .main .page4 p, .main .page5 p, .main .page6 p');
+  var a = document.querySelectorAll('#page1 .navmy a');
   var btn = document.querySelector('.nav .a');
   var main = document.querySelector('.main');
-  var page7=document.querySelector('.main .page7');
-  var pages = document.querySelectorAll('.main #page1, .main .page2, .main .page3, .main .page4, .main .page5, .main .page6, .main .page7, .main .page8');
+  var pages = document.querySelectorAll('.main #page1, .main .page2, .main .page3, .main .page4, .main .page5, .main .page6');
+  var p_tag = document.querySelector('#p_tag');
+  var page5_h1_spans = document.querySelectorAll('.page5_text h1 > span');
+  var page5_h11 = document.querySelector('.h1text');
+  var page6_h1 = document.querySelectorAll('.page6right_elem h1');
 
-  // Check if btn exists to avoid errors
   if (btn) {
     btn.addEventListener('click', function() {
-      page7.style.background='var(--purple)';
-      
-      // Set background color for main and all pages
-      main.style.background = 'var(--purple)';
+      // Toggle theme-effect class on main and all pages
+      main.classList.toggle('theme-effect');
       pages.forEach(page => {
-        page.style.background = 'var(--purple)';
+        page.classList.toggle('theme-effect');
       });
 
-      // Set text color for h1 and p
+      if (h2) h2.classList.toggle('theme-effect');
+
+      // Toggle text color for h1 and p
       h1.forEach(header => {
-        header.style.color = 'var(--white)';
+        header.classList.toggle('theme-effect');
       });
 
       p.forEach(paragraph => {
-        paragraph.style.color = 'var(--white)';
+        paragraph.classList.toggle('theme-effect');
       });
+
+      page5_h1_spans.forEach(span => {
+        span.classList.toggle('theme-effect');
+      });
+
+      if (page5_h11) page5_h11.classList.toggle('theme-effect');
+      a.forEach(anchor => {
+        anchor.classList.toggle('theme-effect');
+      });
+
+      // Toggle gradient-text class for specific elements
+      page6_h1.forEach(header => {
+        header.classList.toggle('gradient-text');
+      });
+
+     page1_h1.style.color='var(--white)';
+       p_tag.style.color='var(--white)';
     });
   }
 }
 
-// themeEffect();
+themeEffect();

@@ -50,6 +50,18 @@ html.lenis body {
 }
 
 
+
+.gradient-text {
+  background: var(--golden);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme-effect {
+  background: var(--purple) !important;
+  color: var(--white) !important;
+}
+
 .loader {
   height: 100vh;
   width: 100vw;
@@ -1119,6 +1131,7 @@ background: var(--pink);
   /* font-style: italic; */
   position: relative;
   left:-10vw;
+  color: var(--black);
 
 }
 
