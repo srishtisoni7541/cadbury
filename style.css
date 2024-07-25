@@ -795,7 +795,7 @@ background: var(--pink);
   color: var(--lightblack);
   font-family: "Lato", sans-serif;
   font-weight: 700;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 .lato-bold {
@@ -1045,6 +1045,7 @@ background: var(--pink);
   -ms-flex-direction: column;
   flex-direction: column;
   border-bottom: 1px solid #22222246;
+  border-top: 1px solid #22222246;
 
 }
 
