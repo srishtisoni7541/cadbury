@@ -2118,7 +2118,7 @@ background: var(--pink);
 
 
 .page3{
-  height: 50vh;
+  height: 70vh;
   width: 100%;
   display: none;
 }
@@ -2221,7 +2221,7 @@ background: var(--pink);
   }
 
   .page6 {
-    height: 80vh;
+    height: 100vh;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
