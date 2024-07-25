@@ -12,76 +12,19 @@ function raf(time) {
 
 requestAnimationFrame(raf)
 
-
 function loaderAnimation(){
-  
-var tl=gsap.timeline()
-tl.to(' .container .loaderimg4',{
-  x:'20vw',
-  delay:.5,
-},'same')
-
-tl.to(' .container .loaderimg3',{
-  x:'25vw',
-  delay:.5,
-},'same')
-tl.to(' .container .loaderimg3',{
-  x:'45vw',
-  delay:1,
-},'same1')
+  gsap.to('.loader',{
+    y:-800,
+    duration:.5,
+    delay:7.5,
+    ease:'expo.Inout',
 
 
-tl.to(' .container .loaderimg2',{
-  x:'31vw',
-
-  delay:1,
-  
-},'same1')
-
-
-tl.to(' .container .loaderimg2',{
-  x:'51vw',
-  delay:1,
-},'same2')
-
-
-tl.to(' .container .loaderimg1',{
-  x:'45vw',
-
-  delay:1,
-  
-},'same2')
-tl.to('.film',{
-  opacity:0,
-  duration:.5,
-  scale:0,
-})
-
-
-tl.to('.loadertext .loaderimg',{
-  y:-300,
-  duration:.5,
-  zIndex:999,
-  ease:'expo.Inout'
-})
-
-tl.to('.loader .loaderimgcontainersimg',{
-  y:-130,
-  duration:.7,
-  ease:'expo.Inout',
-  transform:'rotate(-20deg)',
-})
-
-tl.to('.loader',{
-  display:'none',
-  duration:1,
-  ease:'expo.Inout',
-  delay:.5,
-})
+  })
 }
 
+loaderAnimation()
 
-loaderAnimation();
 
 
 
@@ -90,7 +33,7 @@ function page2Animation(){
     scrollTrigger:{
       trigger:'.page2',
       scrub:true,
-      pin:true,
+      // pin:true,
     }
   });
 
@@ -397,6 +340,109 @@ function page2Animation(){
 
 page2Animation();
 
+
+function page3Animation(){
+  document.querySelectorAll('.page3_img').forEach((img) => {
+    img.addEventListener('mouseenter', () => {
+      var t4 = gsap.timeline();
+      var h1 = document.querySelector(".page3_text h1");
+      var index = img.getAttribute('data-index');
+      var h2 = document.querySelector(`.page3_text h2[data-index="${index}"]`);
+
+      // Check if spans are already created to avoid duplication for h1
+      if (!h1.querySelector('span')) {
+        var texh1 = h1.textContent;
+        var splited = texh1.split("");
+        var clutter = "";
+        splited.forEach(function (elem) {
+          clutter += `<span class='inline-block'>${elem === ' ' ? '&nbsp;' : elem}</span>`;
+        });
+        h1.innerHTML = clutter;
+      }
+
+      // Check if spans are already created to avoid duplication for h2
+      if (h2 && !h2.querySelector('span')) {
+        var texh2 = h2.textContent;
+        var splited2 = texh2.split("");
+        var clutter2 = "";
+        splited2.forEach(function (elem) {
+          clutter2 += `<span class='inline-block'>${elem === ' ' ? '&nbsp;' : elem}</span>`;
+        });
+        h2.innerHTML = clutter2;
+      }
+
+      // Ensure the animation runs only once per mouseenter
+      if (!t4.isActive()) {
+        t4.to(".page3_text h1 span", {
+          y: -200,
+          duration: 0.6,
+          opacity: 0,
+          stagger: 0.1,
+          ease: "power2.inOut" // Add easing
+        }, "same");
+   
+        t4.to(`.page3_text h2[data-index="${index}"] span`, {
+          y: '-90%',
+          duration: 0.6,
+          opacity: 1,
+          stagger: 0.1,
+          ease: "power2.inOut" // Add easing
+        }, "same");
+      }
+    });
+
+    img.addEventListener('mouseleave', () => {
+      // Reset h1 and hide h2 on mouse leave
+      gsap.to('.page3_text h1 > span', {
+        duration: 0.6,
+        y: 10,
+        opacity: 1,
+        stagger: 0.1,
+        ease: "power2.inOut" // Add easing
+      });
+
+      var index = img.getAttribute('data-index');
+      gsap.to(`.page3_text h2[data-index="${index}"] span`, {
+        duration: 0.6,
+        y: '120%',
+        opacity: 0,
+        stagger: 0.1,
+        ease: "power2.inOut" // Add easing
+      });
+    });
+  });
+
+  document.querySelectorAll('.page3_img').forEach((img) => {
+    img.addEventListener('mouseenter', () => {
+      const index = img.getAttribute('data-index');
+      const color = getColorByIndex(index);
+      document.querySelector('.page3').style.background = color;
+    });
+
+    img.addEventListener('mouseleave', () => {
+      document.querySelector('.page3').style.background = '';
+    });
+  });
+
+  function getColorByIndex(index) {
+    const colors = {
+      '1': '#B6A3D9',
+      '2': '#F2D080',
+      '3': '#D8B08E',
+      '4': '#E3A874',
+      '5': '#D3A8A1',
+      '6': '#A694C9',
+      '7': '#D88382',
+      '8': '#B08A74',
+      '9': '#A87B5C'
+    };
+    return colors[index] || 'white'; // default to white if no match
+  }
+}
+
+page3Animation();
+
+
 function page4Animation(){
   var tl4=gsap.timeline(
  {
@@ -563,330 +609,6 @@ window.addEventListener('mousemove', handleMouseMove);
 page5Animation();
 
 
-
-
-
-function page3Animation(){
-  
-function horizontalLoop(items, config = {}) {
-  // Convert items to an array and set default values for config
-  items = gsap.utils.toArray(items);
-  const {
-      repeat = -1,
-      paused = false,
-      speed = 1,
-      snap = 1,
-      paddingRight = 0,
-      reversed = false
-
-  } = config;
-
-  // Create a GSAP timeline
-  let tl = gsap.timeline({
-      repeat,
-      paused,
-      defaults: { ease: "none" },
-      onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100)
-  });
-
-  const length = items.length;
-  const widths = [];
-  const xPercents = [];
-  let startX = items[0].offsetLeft;
-  let totalWidth, curX, distanceToStart, distanceToLoop;
-  const pixelsPerSecond = speed * 100;
-
-  // Helper function to handle snapping
-  const snapValue = snap === false ? v => v : gsap.utils.snap(snap);
-
-  // Set initial properties for items and calculate widths and xPercents
-  gsap.set(items, {
-      xPercent: (i, el) => {
-          const width = widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
-          const xPercent = snapValue(parseFloat(gsap.getProperty(el, "x", "px")) / width * 100 + gsap.getProperty(el, "xPercent"));
-          xPercents[i] = xPercent;
-          return xPercent;
-      }
-  });
-  gsap.set(items, { x: 0 });
-
-  // Calculate totalWidth
-  totalWidth = items[length - 1].offsetLeft +
-      xPercents[length - 1] / 100 * widths[length - 1] -
-      startX +
-      items[length - 1].offsetWidth * gsap.getProperty(items[length - 1], "scaleX") +
-      parseFloat(paddingRight);
-
-  // Build the timeline
-  items.forEach((item, i) => {
-      curX = xPercents[i] / 100 * widths[i];
-      distanceToStart = item.offsetLeft + curX - startX;
-      distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
-
-      tl.to(item, {
-          xPercent: snapValue((curX - distanceToLoop) / widths[i] * 100),
-          duration: distanceToLoop / pixelsPerSecond
-      }, 0)
-      .fromTo(item, {
-          xPercent: snapValue((curX - distanceToLoop + totalWidth) / widths[i] * 100)
-      }, {
-          xPercent: xPercents[i],
-          duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond,
-          immediateRender: false
-      }, distanceToLoop / pixelsPerSecond)
-      .add("label" + i, distanceToStart / pixelsPerSecond);
-  });
-
-  const times = items.map((item, i) => (item.offsetLeft + xPercents[i] / 100 * widths[i] - startX) / pixelsPerSecond);
-
-  // Function to move to a specific index
-  function toIndex(index, vars = {}) {
-      const newIndex = gsap.utils.wrap(0, length, index);
-      let time = times[newIndex];
-
-      if ((time > tl.time()) !== (index > curIndex)) {
-          vars.modifiers = { time: gsap.utils.wrap(0, tl.duration()) };
-          time += tl.duration() * (index > curIndex ? 1 : -1);
-      }
-
-      curIndex = newIndex;
-      vars.overwrite = true;
-      return tl.tweenTo(time, vars);
-  }
-
-  // Add methods to the timeline
-  tl.next = (vars) => toIndex(curIndex + 1, vars);
-  tl.previous = (vars) => toIndex(curIndex - 1, vars);
-  tl.current = () => curIndex;
-  tl.toIndex = (index, vars) => toIndex(index, vars);
-  tl.times = times;
-
-  // Pre-render for performance
-  tl.progress(1, true).progress(0, true);
-
-  // Reverse the timeline if needed
-  if (reversed) {
-      tl.vars.onReverseComplete();
-      tl.reverse();
-  }
-
-  return tl;
-}
-
-  document.querySelectorAll('.page3_img').forEach(img => {
-    img.addEventListener('mouseover', () => {
-      document.querySelectorAll('.elem_stripe1 h1').forEach(h1 => {
-        h1.classList.add('hover-effect');
-      });
-    });
-
-    img.addEventListener('mouseout', () => {
-      document.querySelectorAll('.elem_stripe1 h1').forEach(h1 => {
-        h1.classList.remove('hover-effect');
-      });
-    });
-  });
-
-const elems = gsap.utils.toArray(".elem_stripe1");
-const loop = horizontalLoop(elems, {paused:false,repeat:-1});
-// loaderAnimation();
-// Wrap the whole script in a DOMContentLoaded event listener to ensure it runs after the DOM is fully loaded
-document.querySelectorAll('.page3_img').forEach((img) => {
-  img.addEventListener('mouseenter', () => {
-    var t4 = gsap.timeline();
-    var h1 = document.querySelector(".page3_text h1");
-    var index = img.getAttribute('data-index');
-    var h2 = document.querySelector(`.page3_text h2[data-index="${index}"]`);
-
-    // Check if spans are already created to avoid duplication for h1
-    if (!h1.querySelector('span')) {
-      var texh1 = h1.textContent;
-      var splited = texh1.split("");
-      var clutter = "";
-      splited.forEach(function (elem) {
-        clutter += `<span class='inline-block'>${elem === ' ' ? `&nbsp;` : elem}</span>`;
-      });
-      h1.innerHTML = clutter;
-    }
-
-    // Check if spans are already created to avoid duplication for h2
-    if (h2 && !h2.querySelector('span')) {
-      var texh2 = h2.textContent;
-      var splited2 = texh2.split("");
-      var clutter2 = "";
-      splited2.forEach(function (elem) {
-        clutter2 += `<span class='inline-block'>${elem === ' ' ? `&nbsp;` : elem}</span>`;
-      });
-      h2.innerHTML = clutter2;
-    }
-
-    // Ensure the animation runs only once per mouseenter
-    if (!t4.isActive()) {
-      t4.to(".page3_text h1 span", {
-        y: -200,
-        duration: 0.6 ,
-        opacity: 0,
-        stagger: 0.1,
-        ease: "power2.inOut" // Add easing
-      }, "same");
-   
-      t4.to(`.page3_text h2[data-index="${index}"] span`, {
-        y: '-90%',
-        duration: 0.6,
-        opacity: 1,
-        stagger: 0.1,
-        ease: "power2.inOut" // Add easing
-      }, "same");
-    }
-  });
-
-  img.addEventListener('mouseleave', () => {
-    // Reset h1 and hide h2 on mouse leave
-    gsap.to('.page3_text h1 > span', {
-      duration: 0.6,
-      y: 10,
-      opacity: 1,
-      stagger: 0.1,
-      ease: "power2.inOut" // Add easing
-    });
-
-   
-    
-    var index = img.getAttribute('data-index');
-    gsap.to(`.page3_text h2[data-index="${index}"] span`, {
-      duration: 0.6,
-      y: '120%',
-      opacity: 1,
-      stagger: 0.1,
-      ease: "power2.inOut" // Add easing
-    });
-  });
-});
-
-document.querySelectorAll('.page3_img').forEach((img) => {
-  img.addEventListener('mouseenter', () => {
-    const index = img.getAttribute('data-index');
-    const color = getColorByIndex(index);
-    document.querySelector('.page3').style.background = color;
-  });
-
-  img.addEventListener('mouseleave', () => {
-    document.querySelector('.page3').style.background = '';
-  });
-});
-
-function getColorByIndex(index) {
-  const colors = {
-    '1': '#4C2178',
-    '2': '#E9A037',
-    '3': '#6E391B',
-    '4': '#BC5700',
-    '5': '#8A5848',
-    '6': '#3A0375',
-    '7': '#A12017',
-    '8': '#632D21',
-    '9': '#6C2D11'
-  };
-  return colors[index] || 'white'; // default to white if no match
-}
-
-
-// });
-
-
-
-}
-
-
-page3Animation();
-
-
-function page1Animation(){
-
-
-  document.querySelector(".page1").addEventListener("mousemove",function(dets){
-    var crcle = document.querySelector(".page1left>.img");
-    crcle.style.transform = `translate(${dets.clientX*0.06}px,${dets.clientY*0.06}px)`;
- 
-  })
- 
-}
-
-
-var h11 = document.querySelector('.page1 .h1');
-var h1textcontent = h11.textContent;
-var h1splittedtext = h1textcontent.split("");
-var clutter = '';
-h1splittedtext.forEach(function(letter) {
-  clutter += `<span>${letter}</span>`;
-});
-h11.innerHTML = clutter;
-
-
-
-
-page1Animation();
-
-
-
-function btneffect(){
-  document.addEventListener("DOMContentLoaded", function() {
-    const btn = document.querySelector(".btn-liquid");
-    const canvas = btn.querySelector("canvas");
-    const ctx = canvas.getContext("2d");
-  
-    canvas.width = btn.offsetWidth + 100;
-    canvas.height = btn.offsetHeight + 100;
-  
-    const drops = [];
-    const numDrops = 30;
-  
-    for (let i = 0; i < numDrops; i++) {
-      drops.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 5 + 2,
-        speedX: Math.random() * 2 - 1,
-        speedY: Math.random() * 2 + 1,
-        color: "rgba(255, 255, 255, 0.8)"
-      });
-    }
-  
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-      drops.forEach(drop => {
-        ctx.beginPath();
-        ctx.arc(drop.x, drop.y, drop.radius, 0, Math.PI * 2);
-        ctx.fillStyle = drop.color;
-        ctx.fill();
-        ctx.closePath();
-  
-        drop.y += drop.speedY;
-        drop.x += drop.speedX;
-  
-        if (drop.y > canvas.height) {
-          drop.y = -drop.radius;
-          drop.x = Math.random() * canvas.width;
-        }
-      });
-  
-      requestAnimationFrame(draw);
-    }
-  
-    draw();
-  });
-  
-}
-
-btneffect();
-
-
-
-
-
-
-
 function page6Animation() {
   var elements = document.querySelectorAll(".page6_right [id^='elem']");
   var images = document.querySelectorAll(".page6left_imgcontan [id^='img']");
@@ -901,7 +623,7 @@ function page6Animation() {
           gsap.to(images[index], {
               x: "-40vw",
               rotate:"5",
-              duration: 0.9,
+              duration:1,
               ease: "power2.inOut"
           });
       });
@@ -1004,10 +726,38 @@ function page8Animation(){
 page8Animation();
 
 
-gsap.to(".ball",{
-  yoyo:true,
-  repeat:-1,
-  duration:1,
-  y:-25,
-  stagger:0.1,
-})
+
+
+function themeEffect() {
+  var h1 = document.querySelectorAll('.main h1');
+  var p = document.querySelectorAll('.main p');
+  var a = document.querySelectorAll('.main a'); // This is unused but kept in case needed
+  var btn = document.querySelector('.nav .a');
+  var main = document.querySelector('.main');
+  var page7=document.querySelector('.main .page7');
+  var pages = document.querySelectorAll('.main #page1, .main .page2, .main .page3, .main .page4, .main .page5, .main .page6, .main .page7, .main .page8');
+
+  // Check if btn exists to avoid errors
+  if (btn) {
+    btn.addEventListener('click', function() {
+      page7.style.background='var(--purple)';
+      
+      // Set background color for main and all pages
+      main.style.background = 'var(--purple)';
+      pages.forEach(page => {
+        page.style.background = 'var(--purple)';
+      });
+
+      // Set text color for h1 and p
+      h1.forEach(header => {
+        header.style.color = 'var(--white)';
+      });
+
+      p.forEach(paragraph => {
+        paragraph.style.color = 'var(--white)';
+      });
+    });
+  }
+}
+
+// themeEffect();
