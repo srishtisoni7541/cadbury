@@ -2389,10 +2389,6 @@ color: var(--black);
 }
 
 
-
-
-
-
 @media (max-width: 1440px) {
   .page3_container {
     padding-top: 10vw;
@@ -2455,3 +2451,6 @@ color: var(--black);
     font-size: 10vw;
   }
 } 
+
+
+
