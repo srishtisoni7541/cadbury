@@ -2119,6 +2119,7 @@ background: var(--pink);
 .page3{
   height: 50vh;
   width: 100%;
+  display: none;
 }
 .page3 .page3_img{
   height: 15vw;
