@@ -2387,3 +2387,71 @@ color: var(--black);
     text-transform: capitalize !important;
   }
 }
+
+
+
+
+
+
+@media (max-width: 1440px) {
+  .page3_container {
+    padding-top: 10vw;
+    height: 25vw;
+  }
+
+  .page3_img {
+    width: 6.5vw;
+    height: 6.5vw;
+  }
+
+  .page3_img:hover {
+    width: 14vw;
+    height: 14vw;
+  }
+
+  .page3_text > h1, .page3_text > h2 {
+    font-size: 14vw;
+  }
+}
+
+@media (max-width: 1280px) {
+  .page3_container {
+    padding-top: 12vw;
+    height: 30vw;
+  }
+
+  .page3_img {
+    width: 7.5vw;
+    height: 7.5vw;
+  }
+
+  .page3_img:hover {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .page3_text > h1, .page3_text > h2 {
+    font-size: 12vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page3_container {
+    padding-top: 15vw;
+    height: 35vw;
+  }
+
+  .page3_img {
+    width: 8.5vw;
+    height: 8.5vw;
+  }
+
+  .page3_img:hover {
+    width: 16vw;
+    height: 16vw;
+  }
+
+  .page3_text > h1, .page3_text > h2 {
+    font-size: 10vw;
+  }
+} 
