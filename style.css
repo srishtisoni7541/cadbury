@@ -82,6 +82,10 @@ html.lenis body {
       overflow:hidden;
       background:var(--pink);
   }
+
+
+
+  
  #page1 #image img{
      height:100%;
      width:100%;
@@ -2045,8 +2049,8 @@ background: var(--pink);
 
 #page1 #video{
   position: relative;
-  top: 20vw !important;
-  height: 25vw;
+  top: -18vw !important;
+  height: 25vw !important;
   width: 35vw;
   left: 5vw;
 }
