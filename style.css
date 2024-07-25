@@ -1232,6 +1232,8 @@ background: var(--pink);
   font-weight: 200;
   font-style: normal;
 
+  color: var(--black);
+
 
 
 }
@@ -1258,12 +1260,14 @@ background: var(--pink);
   position: relative;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   top: -2vw !important;
+  color: var(--black);
 
 }
 
 .img7containerleft .p {
   position: relative;
   top: -4vw !important;
+  color: var(--black);
   /* left: -10vw; */
 }
 
@@ -1411,6 +1415,7 @@ background: var(--pink);
   font-family: "Pacifico", cursive;
   font-weight: 200;
 
+color: var(--black);
 
 }
 
@@ -1440,7 +1445,9 @@ background: var(--pink);
   left: 3vw;
   font-family: sans-serif;
   top: -5vw;
+  color: var(--black);
 }
+
 
 .img7containerright {
   display: -webkit-box;
@@ -1461,6 +1468,7 @@ background: var(--pink);
   position: relative;
   /* left: 3vw; */
   font-family: sans-serif;
+  color: var(--black);
 }
 
 
@@ -1626,6 +1634,7 @@ background: var(--pink);
   position: relative;
   /* left: 3vw; */
   top: 4vw;
+  color: var(--black);
   font-family: sans-serif;
 }
   .paracoach{
